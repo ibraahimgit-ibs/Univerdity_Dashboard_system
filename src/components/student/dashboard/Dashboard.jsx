@@ -1,0 +1,152 @@
+import { BsGraphUpArrow } from "react-icons/bs";
+import { FaGraduationCap } from "react-icons/fa6";
+import Card from './../../items/Card';
+import { MdPayment } from "react-icons/md";
+import { useRecoilState } from "recoil";
+import { modalData, Open } from "../../../atom/atom"
+import PayModal from "./PayModal";
+
+
+const Dashboard = () => {
+    const [isOpen, setIsOpen] = useRecoilState(Open)
+    const [data, setData] = useRecoilState(modalData);
+
+    const handleSend = () => {
+        setData([...data, "$150.00" , "9/1/2024"]);
+        setIsOpen(!isOpen);
+    }
+
+    console.log(data)
+
+    return (
+        <div className="max-w-[210vh] min-w-[53vh]">
+            <div className="space-y-3">
+                <h1 className="text-2xl">Welcome back, John!</h1>
+                <p className="text-gray-500">Here's your academic overview for the current semester.</p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 pt-10 w-full">
+                <Card title={"Overall GPA"} paragraph={"+0.12 from last semester"} numbers={"3.85"} icon={<FaGraduationCap />} icon2={<BsGraphUpArrow />} />
+                <Card title={"Credits Completed"} paragraph={"102 credits remaining"} numbers={"18"} icon={<FaGraduationCap />} />
+                <Card title={"Progress to Graduation"} numbers={"15%"} icon={<BsGraphUpArrow />}
+                    div={
+                        <div className="percent_cardg bg-gray-300 w-full mt-2 h-2 rounded-3xl">
+                            <div className="percent_card bg-black w-10 h-full rounded-l-3xl"></div>
+                        </div>
+                    } />
+                <Card title={"Outstanding Balance"} paragraph={"2 pending payment(s)"} numbers={"$175.00"} icon={<MdPayment />} />
+            </div>
+
+            <div className="border border-gray-300 rounded-xl p-5 my-6">
+                <div>
+                    <h2 className="font-semibold">Current Semester Grades</h2>
+                    <p className="text-gray-500">Fall 2025 semester grades and performance</p>
+                </div>
+
+                <table className="w-full mt-6 text-sm">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Letter Grade</th>
+                            <th>Credits</th>
+                            <th>Semester</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className="font-semibold">Mathematics</td>
+                            <td>92%</td>
+                            <td ><span className="a">A-</span></td>
+                            <td>4</td>
+                            <td>Fall 2025</td>
+                        </tr>
+                        <tr>
+                            <td className="font-semibold">English Literature</td>
+                            <td>88%</td>
+                            <td ><span className="ab bg-gray-200 text-black">B+</span></td>
+                            <td>3</td>
+                            <td>Fall 2025</td>
+                        </tr>
+                        <tr>
+                            <td className="font-semibold">Chemistry</td>
+                            <td>85%</td>
+                            <td ><span className="ab bg-gray-200 text-black">B</span></td>
+                            <td>4</td>
+                            <td>Fall 2025</td>
+                        </tr>
+                        <tr>
+                            <td className="font-semibold">History</td>
+                            <td>91%</td>
+                            <td ><span className="a">A+</span></td>
+                            <td>3</td>
+                            <td>Fall 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div className="border border-gray-300 rounded-xl p-5 my-6">
+                <div>
+                    <h2 className="font-semibold">Payment Summary</h2>
+                    <p className="text-gray-500">Recent payments and outstanding balances</p>
+                </div>
+
+                <table className="w-full mt-6 text-sm">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className="font-semibold">Tuition Fee - Fall 2025</td>
+                            <td>$2500.00</td>
+                            <td >8/15/2025</td>
+                            <td><span className="paid rounded-2xl">paid</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td className="font-semibold">Lab Fee - Chemistry</td>
+                            <td>$150.00</td>
+                            <td >9/1/2025</td>
+                            <td><span className="overdue bg-red-600 rounded-2xl">overdue</span></td>
+                            <td>
+                                <button
+                                    className="paybtn"
+                                    onClick={handleSend}
+                                >
+                                    Pay Now</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="font-semibold">Library Fee</td>
+                            <td>$25.00</td>
+                            <td >12/15/2025</td>
+                            <td ><span className="pending bg-gray-200 text-black rounded-2xl">pending</span></td>
+                            <td>
+                                <button
+                                    className="paybtn"
+                                    onClick={() => {
+                                        setIsOpen(!isOpen);
+                                        setData([...data, "$25.00", "12/15/2025"])
+                                    }
+                                    }
+                                >
+                                    Pay Now</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <PayModal />
+        </div>
+    )
+}
+
+export default Dashboard;
