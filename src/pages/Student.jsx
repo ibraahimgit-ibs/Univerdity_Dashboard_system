@@ -7,8 +7,8 @@ import Profile from './../components/student/profile/Profile';
 const Student = () => {
 
   return (
-    <main className='flex-1 p-4 md:p-6'>
-      <div className='m-5 mx-auto max-w-7xl'>
+    <main className='flex-1 p-4 md:p-6 max-w-[210vh] min-w-[53vh]'>
+      <div className=' mx-auto max-w-7xl'>
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/dashboard' element={<Dashboard />} />

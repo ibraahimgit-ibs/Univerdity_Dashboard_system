@@ -16,8 +16,6 @@ const Dashboard = () => {
         setIsOpen(!isOpen);
     }
 
-    console.log(data)
-
     return (
         <div className=" w-full max-w-7xl mx-auto">
             <div className="space-y-3">
@@ -43,47 +41,49 @@ const Dashboard = () => {
                     <p className="text-gray-500">Fall 2025 semester grades and performance</p>
                 </div>
 
-                <table className="w-full mt-6 text-sm">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Grade</th>
-                            <th>Letter Grade</th>
-                            <th>Credits</th>
-                            <th>Semester</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="font-semibold">Mathematics</td>
-                            <td>92%</td>
-                            <td ><span className="a">A-</span></td>
-                            <td>4</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">English Literature</td>
-                            <td>88%</td>
-                            <td ><span className="ab bg-gray-200 text-black">B+</span></td>
-                            <td>3</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">Chemistry</td>
-                            <td>85%</td>
-                            <td ><span className="ab bg-gray-200 text-black">B</span></td>
-                            <td>4</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">History</td>
-                            <td>91%</td>
-                            <td ><span className="a">A+</span></td>
-                            <td>3</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="overflow-x-auto">
+                    <table className="w-full mt-6 text-sm">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Grade</th>
+                                <th>Letter Grade</th>
+                                <th>Credits</th>
+                                <th>Semester</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="font-semibold">Mathematics</td>
+                                <td>92%</td>
+                                <td ><span className="a">A-</span></td>
+                                <td>4</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">English Literature</td>
+                                <td>88%</td>
+                                <td ><span className="ab bg-gray-200 text-black">B+</span></td>
+                                <td>3</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">Chemistry</td>
+                                <td>85%</td>
+                                <td ><span className="ab bg-gray-200 text-black">B</span></td>
+                                <td>4</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">History</td>
+                                <td>91%</td>
+                                <td ><span className="a">A+</span></td>
+                                <td>3</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div className="border border-gray-300 rounded-xl p-5 my-6">
@@ -92,56 +92,58 @@ const Dashboard = () => {
                     <p className="text-gray-500">Recent payments and outstanding balances</p>
                 </div>
 
-                <table className="w-full mt-6 text-sm">
-                    <thead>
-                        <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="font-semibold">Tuition Fee - Fall 2025</td>
-                            <td>$2500.00</td>
-                            <td >8/15/2025</td>
-                            <td><span className="paid rounded-2xl">paid</span></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">Lab Fee - Chemistry</td>
-                            <td>$150.00</td>
-                            <td >9/1/2025</td>
-                            <td><span className="overdue bg-red-600 rounded-2xl">overdue</span></td>
-                            <td>
-                                <button
-                                    className="paybtn"
-                                    onClick={handleSend}
-                                >
-                                    Pay Now</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">Library Fee</td>
-                            <td>$25.00</td>
-                            <td >12/15/2025</td>
-                            <td ><span className="pending bg-gray-200 text-black rounded-2xl">pending</span></td>
-                            <td>
-                                <button
-                                    className="paybtn"
-                                    onClick={() => {
-                                        setIsOpen(!isOpen);
-                                        setData([...data, "$25.00", "12/15/2025"])
-                                    }
-                                    }
-                                >
-                                    Pay Now</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="overflow-x-auto">
+                    <table className="w-full mt-6 text-sm">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="font-semibold">Tuition Fee - Fall 2025</td>
+                                <td>$2500.00</td>
+                                <td >8/15/2025</td>
+                                <td><span className="paid rounded-2xl">paid</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">Lab Fee - Chemistry</td>
+                                <td>$150.00</td>
+                                <td >9/1/2025</td>
+                                <td><span className="overdue bg-red-600 rounded-2xl">overdue</span></td>
+                                <td>
+                                    <button
+                                        className="paybtn"
+                                        onClick={handleSend}
+                                    >
+                                        Pay Now</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">Library Fee</td>
+                                <td>$25.00</td>
+                                <td >12/15/2025</td>
+                                <td ><span className="pending bg-gray-200 text-black rounded-2xl">pending</span></td>
+                                <td>
+                                    <button
+                                        className="paybtn"
+                                        onClick={() => {
+                                            setIsOpen(!isOpen);
+                                            setData([...data, "$25.00", "12/15/2025"])
+                                        }
+                                        }
+                                    >
+                                        Pay Now</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <PayModal />
