@@ -23,9 +23,9 @@ const Header = () => {
 
     return (
         <div>
-            <header className="max-w-[210vh] min-w-[56.9vh] flex items-center justify-between border-b border-gray-300 text-black px-6 py-4">
+            <header className="max-w-[210vh] min-w-[56.9vh] flex items-center justify-between border-b border-gray-300 text-black px-4 py-4">
                 <div className="flex lg:space-x-3 sm:space-x-0 items-center justify-center">
-                    <TiThMenu className="w-5 h-5 mx-3 lg:hidden md:hidden sm:block" onClick={() => setSHoWmenu(!shoWmenu)}/>
+                    <TiThMenu className="w-5 h-5 mx-3 ml-0 lg:hidden md:hidden sm:block" onClick={() => setSHoWmenu(!shoWmenu)}/>
                     <h1 className="font-semibold md:text-2xl sm:text-sm lg:text-2xl">Student Info System</h1>
                     <div className="st-h border border-gray-300 p-2 py-0 rounded-2xl font-semibold bg-blue-100 text-blue-700 hidden lg:block md:block">Student</div>
                 </div>
