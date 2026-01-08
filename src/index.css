@@ -32,11 +32,11 @@
   }
 
   header {
-    @apply w-full;
+    @apply  w-full max-w-7xl mx-auto;
   }
 
   .root{
-    @apply relative;
+    @apply relative w-full max-w-7xl mx-auto ;
   }
 
 }
