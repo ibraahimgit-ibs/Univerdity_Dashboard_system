@@ -17,7 +17,7 @@ const Dashboard = () => {
     }
 
     return (
-        <div className=" w-full max-w-7xl mx-auto">
+        <div className="max-w-[210vh] min-w-[53vh]">
             <div className="space-y-3">
                 <h1 className="text-2xl">Welcome back, John!</h1>
                 <p className="text-gray-500">Here's your academic overview for the current semester.</p>
