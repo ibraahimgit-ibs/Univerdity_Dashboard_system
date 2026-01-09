@@ -23,7 +23,7 @@ const Header = () => {
 
     return (
         <div>
-            <header className="max-w-[210vh] min-w-100 flex items-center justify-between border-b border-gray-300 text-black px-4 py-4">
+            <header className="max-w-full min-w-full flex items-center justify-between border-b border-gray-300 text-black px-4 py-4">
                 <div className="flex lg:space-x-3 sm:space-x-0 items-center justify-center">
                     <TiThMenu className="w-5 h-5 mx-3 ml-0 lg:hidden md:hidden sm:block" onClick={() => setSHoWmenu(!shoWmenu)}/>
                     <h1 className="font-semibold md:text-2xl sm:text-sm lg:text-2xl">Student Info System</h1>
