@@ -21,7 +21,7 @@ const SwitchRole = () => {
     return (
         <div>
             <div
-                className="flex items-center justify-center space-x-2 border border-gray-300 w-full p-1 px-2 rounded-[10px] hover:bg-gray-200 transition"
+                className="bg-white z-100 flex items-center justify-center space-x-2 border border-gray-300 w-full p-1 px-2 rounded-[10px] hover:bg-gray-200 transition"
                 onClick={handleShow}
             >
                 <h1 className="font-semibold md:text-md sm:text-sm lg:text-md">Switch Role</h1>

@@ -20,7 +20,7 @@ const Payments = () => {
     return (
         <div className="max-w-full min-w-full">
             <div className="space-y-3">
-                <h1 className="text-2xl">Payment Management</h1>
+                <h1 className="text-2xl font-semibold">Payment Management</h1>
                 <p className="text-gray-500">Manage your tuition payments, view payment history, and make new payments.</p>
             </div>
 

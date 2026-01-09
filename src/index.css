@@ -2,7 +2,7 @@
 
 @layer base {
   * {
-    @apply m-0 p-0;
+    @apply m-0 p-0 font-sans;
   }
 }
 
@@ -45,10 +45,13 @@
     @apply relative w-full max-w-7xl  mx-auto;
   } */
 
-  thead{
-    @apply w-full
+  thead {
+    @apply w-full;
   }
 
+  .Q_actions {
+    @apply bg-white py-1 text-sm rounded-md font-semibold border border-gray-300 text-center;
+  }
 }
 
 body {

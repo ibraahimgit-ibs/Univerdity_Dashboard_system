@@ -6,7 +6,7 @@ const Grades = () => {
     return (
         <div className="max-w-full min-w-full">
             <div className="space-y-3">
-                <h1 className="text-2xl">Academic Grades</h1>
+                <h1 className="text-2xl font-semibold">Academic Grades</h1>
                 <p className="text-gray-500">View your complete academic history and current semester grades.</p>
             </div>
 

@@ -19,7 +19,7 @@ const Dashboard = () => {
     return (
         <div className="max-w-full min-w-full">
             <div className="space-y-3">
-                <h1 className="text-2xl">Welcome back, John!</h1>
+                <h1 className="text-2xl font-semibold">Welcome back, John!</h1>
                 <p className="text-gray-500">Here's your academic overview for the current semester.</p>
             </div>
 
