@@ -10,7 +10,7 @@ const Grades = () => {
                 <p className="text-gray-500">View your complete academic history and current semester grades.</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-7 pt-10 w-full">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 pt-10 w-full">
                 <Card title={"Overall GPA"} paragraph={"+0.12 from last semester"} numbers={"3.85"} icon={<FaGraduationCap />} icon2={<BsGraphUpArrow />} />
                 <Card title={"Credits Completed"} paragraph={"102 credits remaining"} numbers={"18"} icon={<FaGraduationCap />} />
                 <Card title={"Progress to Graduation"} numbers={"20%"} icon={<BsGraphUpArrow />}
