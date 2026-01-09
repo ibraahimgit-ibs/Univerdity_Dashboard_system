@@ -67,13 +67,13 @@ const Profile = () => {
                         <button>Change Password</button>
                     </div>
                     <div className="Q_actions">
-                        <button>Change Password</button>
+                        <button>Emergence Contacts</button>
                     </div>
                     <div className="Q_actions">
-                        <button>Change Password</button>
+                        <button>Request Transcript</button>
                     </div>
                     <div className="Q_actions">
-                        <button>Change Password</button>
+                        <button>Contact Advisor</button>
                     </div>
                 </div>
             </div>

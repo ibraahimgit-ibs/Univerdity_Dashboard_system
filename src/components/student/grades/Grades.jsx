@@ -27,54 +27,56 @@ const Grades = () => {
                     <p className="text-gray-500">All courses and grades from your academic record</p>
                 </div>
 
-                <table className="w-full mt-6 text-sm">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Grade</th>
-                            <th>Letter Grade</th>
-                            <th>Credits</th>
-                            <th>Semester</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="font-semibold">Mathematics</td>
-                            <td>92%</td>
-                            <td ><span className="a">A-</span></td>
-                            <td>4</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">English Literature</td>
-                            <td>88%</td>
-                            <td ><span className="ab bg-gray-200 text-black">B+</span></td>
-                            <td>3</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">Chemistry</td>
-                            <td>85%</td>
-                            <td ><span className="ab bg-gray-200 text-black">B</span></td>
-                            <td>4</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">History</td>
-                            <td>91%</td>
-                            <td ><span className="a">A+</span></td>
-                            <td>3</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                        <tr>
-                            <td className="font-semibold">physics</td>
-                            <td>89%</td>
-                            <td ><span className="ab bg-gray-200 text-black">B</span></td>
-                            <td>4</td>
-                            <td>Fall 2025</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="overflow-x-auto">
+                    <table className="w-full mt-6 text-sm">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Grade</th>
+                                <th>Letter Grade</th>
+                                <th>Credits</th>
+                                <th>Semester</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="font-semibold">Mathematics</td>
+                                <td>92%</td>
+                                <td ><span className="a">A-</span></td>
+                                <td>4</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">English Literature</td>
+                                <td>88%</td>
+                                <td ><span className="ab bg-gray-200 text-black">B+</span></td>
+                                <td>3</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">Chemistry</td>
+                                <td>85%</td>
+                                <td ><span className="ab bg-gray-200 text-black">B</span></td>
+                                <td>4</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">History</td>
+                                <td>91%</td>
+                                <td ><span className="a">A+</span></td>
+                                <td>3</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                            <tr>
+                                <td className="font-semibold">physics</td>
+                                <td>89%</td>
+                                <td ><span className="ab bg-gray-200 text-black">B</span></td>
+                                <td>4</td>
+                                <td>Fall 2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )
