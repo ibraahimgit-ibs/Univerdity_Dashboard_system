@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
+import { Navigate, useNavigate } from "react-router";
+import { useRecoilState } from "recoil";
+import { roleMethodState } from "../../atom/atom";
 
 const SwitchRole = () => {
 
-    const initialRole = {
-        student: false,
-        sbo_admin: false,
-        registrar_admin: false,
-        super_admin: false,
-    }
-
     const [show, setShow] = useState(false);
-    const [roleMethod, setRoleMethod] = useState(initialRole);
+    const [roleMethod, setRoleMethod] = useRecoilState(roleMethodState);
 
+    const navigate = useNavigate();
 
     const handleShow = () => {
         setShow(!show)
     };
+
+    if (!roleMethod.sbo_admin || !roleMethod.registrar_admin || !roleMethod.super_admin || !roleMethod.student) {
+        setRoleMethod({ ...roleMethod, student: true, sbo_admin: false, registrar_admin: false, super_admin: false })
+        navigate("/student/dashboard");
+    }
 
     return (
         <div>
@@ -33,24 +35,30 @@ const SwitchRole = () => {
                     <h1 className="font-semibold px-4 py-3 w-full border-b border-b-gray-300">Switch Role</h1>
                     <div className="grid space-y-1 px-1 py-3 text-sm">
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.student && "selected"}`}
-                            onClick={() => setRoleMethod({ ...initialRole, student: true })}
+                            onClick={() => {
+                                setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: false, super_admin: false, student: true })
+                                navigate("/student/dashboard")
+                            }}
                         >
-                            <button className="role_btn">Student</button>
+                            <button className="role_btn st_H">Student</button>
                         </div>
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.sbo_admin && "selected"}`}
-                            onClick={() => setRoleMethod({ ...initialRole, sbo_admin: true })}
+                            onClick={() => {
+                                setRoleMethod({ ...roleMethod, sbo_admin: true, registrar_admin: false, super_admin: false, student: false })
+                                navigate("/sbo-admin/dashboard")
+                            }}
                         >
-                            <button className="role_btn bg-green-100 text-green-700">SBO Admin</button>
+                            <button className="role_btn sbo_H bg-green-100 text-green-700">SBO Admin</button>
                         </div>
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.registrar_admin && "selected"}`}
-                            onClick={() => setRoleMethod({ ...initialRole, registrar_admin: true })}
+                            onClick={() => setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: true, super_admin: false, student: false })}
                         >
-                            <button className="role_btn bg-purple-100 text-purple-700">Registrar Admin</button>
+                            <button className="role_btn reg_H bg-purple-100 text-purple-700">Registrar Admin</button>
                         </div>
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.super_admin && "selected"}`}
-                            onClick={() => setRoleMethod({ ...initialRole, super_admin: true })}
+                            onClick={() => setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: false, super_admin: true, student: false })}
                         >
-                            <button className="role_btn bg-red-100 text-red-700">Super Admin</button>
+                            <button className="role_btn sup_H bg-red-100 text-red-700">Super Admin</button>
                         </div>
                     </div>
                 </div>

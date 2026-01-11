@@ -7,17 +7,14 @@ import Profile from './../components/student/profile/Profile';
 const Student = () => {
 
   return (
-    <main className='flex-1 p-4 md:p-6 max-w-full min-w-full'>
-      <div className=' mx-auto max-w-7xl'>
-        <Routes>
-          <Route path='/' element={<Dashboard />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/grades' element={<Grades />} />
-          <Route path='/payments' element={<Payments />} />
-          <Route path='/profile' element={<Profile />} />
-        </Routes>
-      </div>
-    </main>
+    <div className='mx-auto max-w-7xl'>
+      <Routes>
+        <Route path='/student/dashboard' element={<Dashboard />} />
+        <Route path='/student/grades' element={<Grades />} />
+        <Route path='/student/payments' element={<Payments />} />
+        <Route path='/student/profile' element={<Profile />} />
+      </Routes>
+    </div>
   )
 }
 

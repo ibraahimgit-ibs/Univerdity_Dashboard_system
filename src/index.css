@@ -1,8 +1,13 @@
 @import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
 
 @layer base {
   * {
     @apply m-0 p-0 font-sans;
+  }
+
+  html, body{
+    @apply scrollbar-hide;
   }
 }
 
@@ -179,6 +184,27 @@ body {
   .pending {
     background: rgba(128, 128, 128, 0.429);
     color: white;
+  }
+
+
+  .st_H{
+    background-color: #b9c5fd;
+    color: blue;
+  }
+
+  .sbo_H{
+    background-color: #dafdda;
+    color: green;
+  }
+
+  .reg_H{
+    background-color: #ffe9ff;
+    color: purple;
+  }
+
+  .sup_H{
+    background-color: #fbe7e7;
+    color: rgb(186, 0, 0);
   }
 }
 /* ****************************Dark mode********************** */

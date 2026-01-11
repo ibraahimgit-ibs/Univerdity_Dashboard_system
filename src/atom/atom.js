@@ -6,11 +6,21 @@ export const showMenu = atom({
 });
 
 export const Open = atom({
-    key: "Open",
-    default: false,
+  key: "Open",
+  default: false,
 });
 
 export const modalData = atom({
-    key: "modalData",
-    default: [],
+  key: "modalData",
+  default: [],
+});
+
+export const roleMethodState = atom({
+  key: "roleMethodState",
+  default: {
+    student: false,
+    sbo_admin: false,
+    registrar_admin: false,
+    super_admin: false
+  },
 });

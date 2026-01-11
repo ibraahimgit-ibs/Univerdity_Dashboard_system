@@ -21,13 +21,13 @@ const StudentWindow = () => {
   useEffect(() => {
     const newPage = { ...INPAGE };
 
-    if (location.pathname === "/dashboard" || location.pathname === "/") {
+    if (location.pathname === "/student/dashboard") {
       newPage.indashboard = true;
-    } else if (location.pathname === "/grades") {
+    } else if (location.pathname === "/student/grades") {
       newPage.ingrades = true;
-    } else if (location.pathname === "/payments") {
+    } else if (location.pathname === "/student/payments") {
       newPage.inpayment = true;
-    } else if (location.pathname === "/profile") {
+    } else if (location.pathname === "/student/profile") {
       newPage.inprofile = true;
     }
 
@@ -39,7 +39,7 @@ const StudentWindow = () => {
   return (
     <div className="w-full lg:p-5 md:p-5 sm:p-0">
       <div className="space-y-5 font-semibold text-[17px] pb-10">
-        <Link to={"/dashboard"}>
+        <Link to={"/student/dashboard"}>
           <div
             className={`flex gap-4 items-center justify-start w-full p-2 px-3 rounded-lg cursor-pointer ${inPage.indashboard ? "sl bg-black text-white" : "hover:bg-[#8080804c] transition"}`}
           >
@@ -47,7 +47,7 @@ const StudentWindow = () => {
             Dashboard
           </div>
         </Link>
-        <Link to={"grades"} >
+        <Link to={"/student/grades"} >
           <h1
             className={`flex items-center gap-4 w-full p-2 px-3 rounded-lg cursor-pointer ${inPage.ingrades ? "sl bg-black text-white" : "hover:bg-[#8080804c] transition"}`}
           >
@@ -55,7 +55,7 @@ const StudentWindow = () => {
             Grades
           </h1>
         </Link>
-        <Link to={"payments"}>
+        <Link to={"/student/payments"}>
           <h1
             className={`flex items-center gap-4 p-2 px-3 rounded-lg cursor-pointer ${inPage.inpayment ? " sl bg-black text-white" : "hover:bg-[#8080804c] transition"}`}
           >
@@ -63,7 +63,7 @@ const StudentWindow = () => {
             Payment
           </h1>
         </Link>
-        <Link to={"profile"}>
+        <Link to={"/student/profile"}>
           <h1
             className={`flex items-center gap-4 p-2 px-3 rounded-lg cursor-pointer ${inPage.inprofile ? "sl bg-black text-white" : "hover:bg-[#8080804c] transition"}`}
           >
