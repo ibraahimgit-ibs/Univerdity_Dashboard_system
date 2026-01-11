@@ -15,15 +15,10 @@ const SwitchRole = () => {
         setShow(!show)
     };
 
-    if (!roleMethod.sbo_admin || !roleMethod.registrar_admin || !roleMethod.super_admin || !roleMethod.student) {
-        setRoleMethod({ ...roleMethod, student: true, sbo_admin: false, registrar_admin: false, super_admin: false })
-        navigate("/student/dashboard");
-    }
-
     return (
         <div>
             <div
-                className="bg-white z-100 flex items-center justify-center space-x-2 border border-gray-300 w-full p-1 px-2 rounded-[10px] hover:bg-gray-200 transition"
+                className="bg-white z-100 flex items-center justify-center space-x-2 border border-gray-300 w-full p-1 px-2 rounded-[10px] hover:bg-gray-200 cursor-default transition"
                 onClick={handleShow}
             >
                 <h1 className="font-semibold md:text-md sm:text-sm lg:text-md">Switch Role</h1>
