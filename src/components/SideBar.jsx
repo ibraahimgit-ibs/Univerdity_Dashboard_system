@@ -5,7 +5,9 @@ import { RxCrossCircled } from "react-icons/rx";
 
 const SideBar = () => {
     const [shoWmenu, setSHoWmenu] = useRecoilState(showMenu);
-
+    const [roleMethod] = useRecoilState(roleMethodState);
+    
+    
     return (
         <>
             <div
@@ -25,7 +27,7 @@ const SideBar = () => {
                             className="text-gray-400 w-5 h-5 cursor-pointer"
                         />
                     </div>
-                    <StudentWindow />
+                    {roleMethod.student && <StudentWindow /> }
                 </div>
             </div>
         </>
