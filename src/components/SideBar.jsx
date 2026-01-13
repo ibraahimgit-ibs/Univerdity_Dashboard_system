@@ -2,6 +2,7 @@ import { useRecoilState } from "recoil";
 import { showMenu } from "../atom/atom";
 import StudentWindow from "./items/window_items/StudentWindow";
 import { RxCrossCircled } from "react-icons/rx";
+import { roleMethodState } from "../atom/atom";
 
 const SideBar = () => {
     const [shoWmenu, setSHoWmenu] = useRecoilState(showMenu);
