@@ -57,6 +57,14 @@
   .Q_actions {
     @apply bg-white py-1 text-sm rounded-md font-semibold border border-gray-300 text-center;
   }
+  
+  .sbo_btn {
+    @apply w-full text-center m-1 py-0.5 rounded-full font-semibold;
+  }
+
+  .up_ex_divs {
+    @apply flex items-center gap-2 border border-gray-300 px-1 py-0.5 rounded-md font-semibold;
+  }
 }
 
 body {

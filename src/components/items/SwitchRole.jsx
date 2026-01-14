@@ -33,6 +33,7 @@ const SwitchRole = () => {
                             onClick={() => {
                                 setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: false, super_admin: false, student: true })
                                 navigate("/student/dashboard")
+                                handleShow();
                             }}
                         >
                             <button className="role_btn st_H">Student</button>
@@ -41,17 +42,26 @@ const SwitchRole = () => {
                             onClick={() => {
                                 setRoleMethod({ ...roleMethod, sbo_admin: true, registrar_admin: false, super_admin: false, student: false })
                                 navigate("/sbo-admin/dashboard")
+                                handleShow();
                             }}
                         >
                             <button className="role_btn sbo_H bg-green-100 text-green-700">SBO Admin</button>
                         </div>
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.registrar_admin && "selected"}`}
-                            onClick={() => setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: true, super_admin: false, student: false })}
+                            onClick={() => {
+                                setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: true, super_admin: false, student: false });
+                                handleShow();
+                            }
+                            }
                         >
                             <button className="role_btn reg_H bg-purple-100 text-purple-700">Registrar Admin</button>
                         </div>
                         <div className={`w-full p-2 pl-4 rounded-lg hover:bg-gray-200 transition ${roleMethod.super_admin && "selected"}`}
-                            onClick={() => setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: false, super_admin: true, student: false })}
+                            onClick={() => {
+                                setRoleMethod({ ...roleMethod, sbo_admin: false, registrar_admin: false, super_admin: true, student: false })
+                                handleShow();
+                            }
+                            }
                         >
                             <button className="role_btn sup_H bg-red-100 text-red-700">Super Admin</button>
                         </div>
