@@ -1,14 +1,12 @@
 import { useRecoilState } from "recoil";
-import { showMenu } from "../atom/atom";
+import { roleMethodState, showMenu } from "../atom/atom";
 import StudentWindow from "./items/window_items/StudentWindow";
 import { RxCrossCircled } from "react-icons/rx";
-import { roleMethodState } from "../atom/atom";
 
 const SideBar = () => {
     const [shoWmenu, setSHoWmenu] = useRecoilState(showMenu);
-    const [roleMethod] = useRecoilState(roleMethodState);
-    
-    
+    const [roleMethod, _] = useRecoilState(roleMethodState);
+
     return (
         <>
             <div
@@ -28,7 +26,7 @@ const SideBar = () => {
                             className="text-gray-400 w-5 h-5 cursor-pointer"
                         />
                     </div>
-                    {roleMethod.student && <StudentWindow /> }
+                    {roleMethod === "student" && <StudentWindow />}
                 </div>
             </div>
         </>
