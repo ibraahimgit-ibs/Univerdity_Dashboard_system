@@ -9,7 +9,7 @@ import Reports_c from './comp/Reports_c';
 
 const Dashboard = () => {
   const btn_selected = {
-    a: false,
+    a: true,
     b: false,
     c: false,
   }
@@ -27,17 +27,17 @@ const Dashboard = () => {
         <Card title="Average GPA" icon={<BsGraphUpArrow />} numbers={"3.62"} paragraph={"Current semester"} />
         <Card title="Grades Entered" icon={<LuBookOpen />} numbers={"7"} paragraph={"This semester"} />
       </div>
-      <div className="bg-gray-200 p-0 my-6 w-full flex items-center justify-between rounded-full">
+      <div className="sbo_dashboard_option bg-gray-200 p-0 my-6 w-full flex items-center justify-between rounded-full">
         <button
-          className={`sbo_btn ${selected.a && "bg-white"}`}
+          className={`sbo_btn ${selected.a && "selected_sbo_btn bg-white"}`}
           onClick={() => setSelected({ ...selected, a: true, b: false, c: false })}
         >Grade Entry</button>
         <button
-          className={`sbo_btn ${selected.b && "bg-white"}`}
+          className={`sbo_btn ${selected.b && "selected_sbo_btn bg-white"}`}
           onClick={() => setSelected({ ...selected, a: false, b: true, c: false })}
         >Students</button>
         <button
-          className={`sbo_btn ${selected.c && "bg-white"}`}
+          className={`sbo_btn ${selected.c && "selected_sbo_btn bg-white"}`}
           onClick={() => setSelected({ ...selected, a: false, b: false, c: true })}
         >Reports</button>
       </div>

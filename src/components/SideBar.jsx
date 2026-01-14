@@ -26,7 +26,7 @@ const SideBar = () => {
                             className="text-gray-400 w-5 h-5 cursor-pointer"
                         />
                     </div>
-                    <StudentWindow />
+                    {roleMethod.student && <StudentWindow />}
                 </div>
             </div>
         </>

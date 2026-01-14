@@ -1,12 +1,13 @@
 @import "tailwindcss";
-@import 'tailwind-scrollbar-hide/v4';
+@import "tailwind-scrollbar-hide/v4";
 
 @layer base {
   * {
     @apply m-0 p-0 font-sans;
   }
 
-  html, body{
+  html,
+  body {
     @apply scrollbar-hide;
   }
 }
@@ -57,13 +58,13 @@
   .Q_actions {
     @apply bg-white py-1 text-sm rounded-md font-semibold border border-gray-300 text-center;
   }
-  
+
   .sbo_btn {
     @apply w-full text-center m-1 py-0.5 rounded-full font-semibold;
   }
 
   .up_ex_divs {
-    @apply flex items-center gap-2 border border-gray-300 px-1 py-0.5 rounded-md font-semibold;
+    @apply flex items-center gap-2 border border-gray-300 px-1 py-0.5 rounded-md font-semibold cursor-pointer transition-all;
   }
 }
 
@@ -194,25 +195,39 @@ body {
     color: white;
   }
 
-
-  .st_H{
+  .st_H {
     background-color: #b9c5fd;
     color: blue;
   }
 
-  .sbo_H{
+  .sbo_H {
     background-color: #dafdda;
     color: green;
   }
 
-  .reg_H{
+  .reg_H {
     background-color: #ffe9ff;
     color: purple;
   }
 
-  .sup_H{
+  .sup_H {
     background-color: #fbe7e7;
     color: rgb(186, 0, 0);
+  }
+
+  .sbo_dashboard_option{
+    background: rgb(58, 58, 58);
+    color: white;
+  }
+
+  .sbo_btn{
+    background: rgb(58, 58, 58);
+    color: white;
+  }
+
+  .selected_sbo_btn{
+    background: white;
+    color: black;
   }
 }
 /* ****************************Dark mode********************** */
