@@ -3,13 +3,14 @@ import { FaGraduationCap } from "react-icons/fa6";
 import Card from './../../items/Card';
 import { MdPayment } from "react-icons/md";
 import { useRecoilState } from "recoil";
-import { modalData, Open } from "../../../atom/atom"
+import { modalData, Open, userDataState } from "../../../atom/atom"
 import PayModal from "./PayModal";
 
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useRecoilState(Open)
     const [data, setData] = useRecoilState(modalData);
+    const [userData, _] = useRecoilState(userDataState);
 
     const handleSend = () => {
         setData([...data, "$150.00", "9/1/2024"]);
@@ -19,7 +20,7 @@ const Dashboard = () => {
     return (
         <div className="max-w-full min-w-full">
             <div className="space-y-3">
-                <h1 className="text-2xl font-semibold">Welcome back, John!</h1>
+                <h1 className="text-2xl font-semibold">Welcome back, {userData.st_name}!</h1>
                 <p className="text-gray-500">Here's your academic overview for the current semester.</p>
             </div>
 

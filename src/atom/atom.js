@@ -24,3 +24,8 @@ export const roleMethodState = atom({
     super_admin: false
   },
 });
+
+export const userDataState = atom({
+  key: "userDataState",
+  default: {},
+});

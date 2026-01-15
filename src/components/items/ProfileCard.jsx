@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { BsPerson } from "react-icons/bs";
+import { useRecoilState } from "recoil";
+import { userDataState } from "../../atom/atom";
 
 const ProfileCard = () => {
     const [show, setShow] = useState(false);
+    const [studentData, _] = useRecoilState(userDataState);
 
     const handleShow = () => {
         setShow(!show)
@@ -18,8 +21,8 @@ const ProfileCard = () => {
             {show &&
                 <div className="absolute right-5 text-sm rounded-xl w-60 p-0 py-1 m-2 shadow-lg bg-white shadow-gray-300 border border-gray-200 transition">
                     <div className="w-full pb-3 px-3">
-                        <h1 className="font-semibold text-md">John Doe</h1>
-                        <p className="text-gray-500 text-sm">john.doe@student.edu</p>
+                        <h1 className="font-semibold text-md">{studentData.st_name}</h1>
+                        <p className="text-gray-500 text-sm">{studentData.st_email}</p>
                     </div>
                     <div className="flex flex-col px-3 mb-3 py-2 border-0 border-b border-t border-gray-300">
                         <div

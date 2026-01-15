@@ -1,5 +1,9 @@
+import { useRecoilState } from "recoil";
+import { userDataState } from "../../../atom/atom";
 
 const Profile = () => {
+    const [studentData, _] = useRecoilState(userDataState);
+
     return (
         <div className="max-w-full min-w-full">
             <div className="space-y-3">
@@ -15,15 +19,15 @@ const Profile = () => {
                     </div>
                     <div className="text-sm grid gap-2 my-5">
                         <h1 className="font-semibold">Full Name</h1>
-                        <p className="text-gray-500">John Doe</p>
+                        <p className="text-gray-500">{studentData.st_name}</p>
                     </div>
                     <div className="text-sm grid gap-2 mb-5">
                         <h1 className="font-semibold">Student ID</h1>
-                        <p className="text-gray-500">1</p>
+                        <p className="text-gray-500">{studentData.id}</p>
                     </div>
                     <div className="text-sm grid gap-2 mb-5">
                         <h1 className="font-semibold">Email Address</h1>
-                        <p className="text-gray-500">john.doe@student.edu</p>
+                        <p className="text-gray-500">{studentData.st_email}</p>
                     </div>
                     <div className="grid gap-5">
                         <label className="font-semibold text-sm">Major</label>
